@@ -8,6 +8,8 @@ import {
   // ...
 } from '@angular/animations';
 
+import {Observable} from 'rxjs';
+
 @Component({
   selector: 'app-open-close',
   animations: [
@@ -36,6 +38,15 @@ import {
 })
 export class OpenCloseComponent {
   isOpen = true;
+
+  ngOnInit() {
+    console.log(history.state.message);
+  }
+
+  canDeactivate(): Observable<boolean> | boolean {
+    console.log('haloo???');
+   return false
+  }
 
   toggle() {
     this.isOpen = !this.isOpen;
