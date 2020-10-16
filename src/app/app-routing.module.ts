@@ -5,6 +5,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { OpenCloseComponent} from './openclose/open-close.component';
+import { CanDeactivateGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
-  { path: 'test', component: OpenCloseComponent }
+  { path: 'test', component: OpenCloseComponent, canDeactivate: [CanDeactivateGuard] }
 ];
 
 @NgModule({
