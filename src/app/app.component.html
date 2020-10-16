@@ -1,3 +1,5 @@
+
+
 <h1>{{title}}</h1>
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
@@ -5,3 +7,10 @@
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+
+
+<app-templater [template]="template1"></app-templater>
+
+<ng-template #template1>
+  <span>Hello</span>
+</ng-template>
